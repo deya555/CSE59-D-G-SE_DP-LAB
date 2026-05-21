@@ -1,130 +1,256 @@
-Software Requirements Specification (SRS)
-Preface
+# Software Requirements Specification (SRS)
 
-This document provides the Software Requirements Specification (SRS) for the Bank Management System (BMS). It defines system functionalities, security requirements, performance criteria, and system design models required for development and implementation.
+## Preface
 
-Version History
-Version 1.0 – Initial Draft
-Version 1.1 – Added system models and ER diagram
-Version 1.2 – Refined functional and non-functional requirements
-1. Introduction
-Purpose
+This document provides the Software Requirements Specification (SRS) for the **Bank Management System (BMS)**. It defines the system’s functionalities, performance criteria, security requirements, and overall system architecture necessary for development.
 
-The Bank Management System is a software application designed to provide secure, efficient, and user-friendly banking services. The system allows users to manage their accounts, perform transactions, and access banking services such as balance enquiry, withdrawals, mini statements, and PIN changes.
+---
 
-Document Conventions
+## Version History
 
-This document follows IEEE SRS standards:
+* **Version 1.0** – Initial Draft.
+* **Version 1.1** – Added non-functional requirements and system models.
+* **Version 1.2** – Refined system evolution and ER diagram.
 
-Must – Mandatory requirement
-Should – Recommended feature
-May – Optional feature
-Intended Audience and Reading Suggestions
-Developers – For system implementation
-Bank Administrators – For understanding system operations
-Testers/QA Teams – For validation and testing
-Stakeholders – For business understanding
-Scope
+---
 
-The system includes the following modules:
+## 1. Introduction
 
-Login Page (Authentication)
-User Dashboard
-Balance Enquiry
-Withdraw Money
-PIN Change
-Mini Statement
-Transaction History
-References
-IEEE SRS Standard 830-1998
-Banking Security Guidelines
-Internal System Design Documents
-2. Overall Description
-Product Perspective
+### Purpose
 
-The Bank Management System is a standalone application that manages core banking operations digitally, replacing manual banking processes.
+The Bank Management System is a secure, user-friendly software application designed to provide core banking services digitally. It allows users to manage accounts, perform transactions, check balances, withdraw money, change PINs, and view transaction history efficiently.
 
-Product Functions
-Secure user authentication
-Account balance checking
-Cash withdrawal functionality
-PIN change facility
-Mini statement generation
-Transaction history tracking
-User Classes and Characteristics
-Customer/User: Performs banking operations
-Bank Admin (Optional): Manages user accounts and system control
-Operating Environment
-Web-based or desktop application
-Cross-browser support (Chrome, Firefox, Edge)
-Backend database (MySQL / PostgreSQL)
-Design and Implementation Constraints
-Must follow banking security standards
-Must ensure encrypted data storage
-Must support secure authentication
-Assumptions and Dependencies
-Users must have a valid bank account
-Internet or local network connectivity is required
-Database must be available 24/7
-3. System Requirements Specification
-Functional Requirements
-3.1 User Authentication
-The system must allow users to log in using Account Number and PIN.
-The system must validate credentials before granting access.
-3.2 User Dashboard
-The system must display a dashboard after login.
-The dashboard must provide navigation to all banking services.
-3.3 Balance Enquiry
-The system must allow users to view their current account balance.
-Balance must be fetched from the database in real time.
-3.4 Withdraw Money
-The system must allow users to withdraw money from their account.
-The system must validate sufficient balance before processing.
-3.5 PIN Change
-The system must allow users to change their PIN securely.
-Old PIN must be verified before updating.
-3.6 Mini Statement
-The system must display the last 5–10 transactions.
-Each record must include date, type, and amount.
-3.7 Transaction History
-The system must record all transactions (withdrawals, deposits).
-Users must be able to view full transaction history.
-Non-Functional Requirements
-Performance Requirements
-The system must handle multiple users simultaneously.
-Transactions must be processed within seconds.
-Security Requirements
-PIN must be encrypted in the database.
-Role-based authentication must be enforced.
-All sensitive data must be secured.
-Usability Requirements
-The system must have a simple and user-friendly interface.
-Navigation must be intuitive.
-Reliability Requirements
-The system must ensure data consistency.
-Must maintain 99.9% uptime.
-Maintainability
-The system must be modular and easy to update.
-Logs must be maintained for debugging.
-Portability
-The system should run on Windows, Linux, and web platforms.
-4. System Models
-Entity-Relationship (ER) Diagram
-<img src="erd image.png" alt="State Diagram">
-5. System Evolution
-Assumptions
-Future mobile banking app integration is possible.
-AI-based fraud detection may be added.
-Multi-currency support may be introduced.
-Expected Changes
-Integration with online payment gateways
-Biometric authentication (fingerprint/face ID)
-SMS/Email notifications for transactions
-6. Appendices
-Hardware Requirements
-Cloud or local server infrastructure
-Secure database server
-Backup storage system
-Database Requirements
-Must support relational data (SQL-based)
-Must maintain transaction integrity (ACID prop
+---
+
+### Document Conventions
+
+This document follows the IEEE SRS standard, using:
+
+* **Must** – Indicates mandatory requirements.
+* **Should** – Indicates recommended features.
+* **May** – Indicates optional enhancements.
+
+---
+
+### Intended Audience and Reading Suggestions
+
+* **Project Managers & Developers** – For system implementation guidance.
+* **Bank Administrators** – To understand system operations.
+* **Testers & QA Teams** – To validate compliance with requirements.
+* **Stakeholders & Business Analysts** – To understand system capabilities.
+
+---
+
+### Scope
+
+The system provides:
+
+* User authentication and login system
+* Account management and dashboard
+* Balance enquiry feature
+* Cash withdrawal functionality
+* PIN change module
+* Mini statement generation
+* Full transaction history tracking
+
+---
+
+### References
+
+* IEEE Standard 830-1998 (Software Requirements Specification)
+* Banking Security Guidelines
+* Internal System Design Documentation
+
+---
+
+## 2. Overall Description
+
+### Product Perspective
+
+The Bank Management System is a standalone application that replaces manual banking operations with a digital and automated solution.
+
+---
+
+### Product Functions
+
+* Secure user authentication
+* Account balance enquiry
+* Cash withdrawal processing
+* PIN change functionality
+* Mini statement generation
+* Transaction history management
+
+---
+
+### User Classes and Characteristics
+
+* **Customer/User:** Performs banking operations such as withdrawal, balance check, and PIN change.
+* **Bank Admin (Optional):** Manages user accounts and system configuration.
+
+---
+
+### Operating Environment
+
+* Web-based or desktop application
+* Cross-browser support (Chrome, Firefox, Edge)
+* Backend database (MySQL / PostgreSQL)
+* Server-based deployment environment
+
+---
+
+### Design and Implementation Constraints
+
+* Must follow banking security standards
+* Must ensure encrypted storage of sensitive data
+* Must support secure authentication mechanisms
+
+---
+
+### Assumptions and Dependencies
+
+* Users must have a valid bank account
+* Internet or local network connectivity is required
+* Database system must operate 24/7
+
+---
+
+## 3. System Requirements Specification
+
+### Functional Requirements
+
+### User Authentication
+
+* The system must allow users to log in using Account Number and PIN.
+* The system must validate credentials before granting access.
+
+---
+
+### User Dashboard
+
+* The system must display a dashboard after successful login.
+* The dashboard must provide navigation to all banking services.
+
+---
+
+### Balance Enquiry
+
+* The system must allow users to view their current account balance.
+* Balance must be retrieved from the database in real time.
+
+---
+
+### Withdraw Money
+
+* The system must allow users to withdraw money from their account.
+* The system must check sufficient balance before processing transactions.
+
+---
+
+### PIN Change
+
+* The system must allow users to change their PIN securely.
+* Old PIN verification must be required before updating.
+
+---
+
+### Mini Statement
+
+* The system must display the last 5–10 transactions.
+* Each transaction must include date, type, and amount.
+
+---
+
+### Transaction History
+
+* The system must record all transactions including deposits and withdrawals.
+* Users must be able to view complete transaction history.
+
+---
+
+## Non-Functional Requirements
+
+### Performance Requirements
+
+* The system must support multiple users simultaneously.
+* Transactions must be processed within seconds.
+
+---
+
+### Security Requirements
+
+* PIN must be stored in encrypted form in the database.
+* Role-based authentication must be implemented.
+* All sensitive data must be protected from unauthorized access.
+
+---
+
+### Usability Requirements
+
+* The system must provide a simple and user-friendly interface.
+* Navigation must be intuitive and consistent.
+
+---
+
+### Reliability and Availability
+
+* The system must ensure 99.9% uptime.
+* Backup and recovery mechanisms must be implemented.
+
+---
+
+### Maintainability and Support
+
+* The system must follow modular design principles.
+* Proper logging mechanisms must be implemented for debugging.
+
+---
+
+### Portability
+
+* The system should support Windows, Linux, and web-based platforms.
+
+---
+
+## 4. System Models
+
+> * **ENTITY-RELATIONSHIP DIAGRAM**
+
+<img src="images/erd image.png">
+
+---
+
+## 5. System Evolution
+
+### Assumptions
+
+* Future mobile banking application integration is possible.
+* AI-based fraud detection may be added later.
+* Multi-currency support may be introduced.
+
+---
+
+### Expected Changes
+
+* Integration with online payment gateways
+* Biometric authentication (fingerprint / face recognition)
+* SMS and email notifications for transactions
+
+---
+
+## 6. Appendices
+
+### Hardware Requirements
+
+* Cloud or local server infrastructure
+* Secure database server
+* Backup storage system
+
+---
+
+### Database Requirements
+
+* Must support relational database systems (SQL-based)
+* Must maintain ACID properties for transaction safety
+* Must support backup and recovery mechanisms
+
+---
